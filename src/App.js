@@ -6,6 +6,7 @@ import NameDisplay from "./components/NameDisplay";
 import Form from "./components/Form";
 import NameDisplayResetButton from "./components/NameDisplayResetButton";
 import Main from "./before/Main";
+import Main2 from "./after/Main";
 
 function App() {
   return (
@@ -16,6 +17,13 @@ function App() {
         순차적으로 나타나는 현상이 나타날 수 있습니다.
       </p>
       <Main />
+      <hr />
+      <h2>After Suspense</h2>
+      <p>
+        user 컴포넌트와 Posts 컴포넌트 간의 waterfall 현상이 사라지고 거의
+        동시에 화면에 나타나는 것을 확인하실 수 있으실 것입니다.
+      </p>
+      <Main2 />
       <hr />
       <h2>useResetRecoilState(state)</h2>
       <p>
