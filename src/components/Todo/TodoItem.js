@@ -2,7 +2,7 @@ import { useRecoilState } from "recoil";
 import { todoListState } from "../../states/todoListState";
 
 function TodoItem({ item }) {
-  const [todoList, setTodoList] = useRecoilState(todoListState);
+  const [todoList, setTodoList] = useRecoilState(todoListState); // useState hook과 비슷하다.
   const index = todoList.findIndex((listItem) => listItem === item);
 
   const editItemText = ({ target: { value } }) => {
