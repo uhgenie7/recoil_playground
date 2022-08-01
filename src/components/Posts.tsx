@@ -1,25 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useRecoilValue } from 'recoil';
+import { postState } from '@src/states/postState';
+import { useQueryClient } from '@tanstack/react-query';
 
-function Posts({ userId }) {
-  const [loading, setLoading] = useState(true);
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
-      .then((response) => response.json())
-      .then((posts) => {
-        setTimeout(() => {
-          setPosts(posts);
-          setLoading(false);
-        }, 3000);
-      });
-  });
-
-  if (loading) return <p>글목록 로딩중...</p>;
+function Posts() {
+  const client = useQueryClient();
+  const postList = useRecoilValue(postState);
 
   return (
     <ul>
-      {posts.map((post) => (
+      {postList.map((post) => (
         <li key={post.id}>
           {post.id}. {post.title}
         </li>
