@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { RecoilRoot } from 'recoil';
 import '../styles/globals.css';
 
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <RecoilRoot>
         <Component {...pageProps} />
       </RecoilRoot>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   );
 }
