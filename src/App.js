@@ -3,10 +3,27 @@ import CharacterCounter from "./components/CharacterCounter/CharacterCounter";
 import TodoList from "./components/Todo/TodoList";
 import TempCelsius from "./components/TempCelsius";
 import NameDisplay from "./components/NameDisplay";
+import Form from "./components/Form";
+import NameDisplayResetButton from "./components/NameDisplayResetButton";
 
 function App() {
   return (
     <RecoilRoot>
+      <h2>useResetRecoilState(state)</h2>
+      <p>
+        주어진 상태를 default 값으로 리셋하는 함수를 반환합니다.
+        useResetRecoilState()를 사용하는 것은 컴포넌트가 상태가 변경될 때
+        리렌더링을 위해 컴포넌트를 구독하지 않고도 상태를 기본값으로 리셋할 수
+        있게 해줍니다.
+      </p>
+      <NameDisplayResetButton />
+      <h2>useSetRecoilState(state)</h2>
+      <p>
+        atom에 쓰려고만 할 때 이 Hook를 사용한다. useSetRecoilState()을 사용하는
+        것은 컴포넌트가 값이 바뀔 때 리렌더링을 하기 위해 컴포넌트를 구독하지
+        않고도 값을 설정하게 해줍니다.
+      </p>
+      <Form />
       <h2>useRecoilValue(state)</h2>
       <p>
         atom을 <strong>읽기</strong>만 할 때 이 Hook를 사용한다. 이 Hook는
