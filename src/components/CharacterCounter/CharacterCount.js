@@ -1,4 +1,4 @@
-import { charCountState } from "../states/textState";
+import { charCountState } from "../../states/textState";
 import { useRecoilValue } from "recoil";
 
 function CharacterCount() {
