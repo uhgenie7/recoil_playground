@@ -1,11 +1,14 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import Main from '@src/components/Main';
+import Test from '@src/components/Text';
+import PostList from '@src/components/PostList';
 
 const Home: NextPage = () => {
-  return <Main />;
+  return (
+    <>
+      <h1>Test API</h1>
+      <PostList />
+    </>
+  );
 };
 
 export default Home;

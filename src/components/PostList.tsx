@@ -16,15 +16,15 @@ const PostList = () => {
     return <span>Loading...</span>;
   }
 
-  if (isError) {
-    return console.error(error);
-  }
+  // if (isError) {
+  //   return console.error(error);
+  // }
 
   return (
     <>
       <Input mutate={() => {}} />
       <ul className="messages">
-        {data.map((x) => (
+        {data?.map((x) => (
           <Post key={x.id} {...x} />
         ))}
       </ul>
