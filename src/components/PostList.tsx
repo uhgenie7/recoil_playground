@@ -1,4 +1,4 @@
-import MsgInput from './MsgInput';
+import Input from './Input';
 import Post from './Post';
 import { AxiosError } from 'axios';
 import { useQuery } from '@tanstack/react-query';
@@ -22,7 +22,7 @@ const PostList = () => {
 
   return (
     <>
-      <MsgInput mutate={() => {}} />
+      <Input mutate={() => {}} />
       <ul className="messages">
         {data.map((x) => (
           <Post key={x.id} {...x} />
